@@ -13,14 +13,14 @@ function byId(id){
 	return typeof(id)==="string"?document.getElementById(id):id;
 }
 
-// 清除定时器,停止自动播放
+// Clear timer and stop auto - playback
 function stopAutoPlay(){
 	if(timer){
        clearInterval(timer);
 	}
 }
 
-// 图片自动轮播
+// Pictures are automatically rotated
 function startAutoPlay(){
    timer = setInterval(function(){
        index++;
@@ -61,21 +61,21 @@ function slideImg(){
        }
     }
 
-    // 下一张
+    // next pic
     next.onclick = function(){
        index++;
        if(index>=size) index=0;
        changeImg();
     }
 
-    // 上一张
+    // previous pic
     prev.onclick = function(){
        index--;
        if(index<0) index=size-1;
        changeImg();
     }
 
-    // 菜单
+    // M
     for(var m=0,mlen=menuItems.length;m<mlen;m++){
         menuItems[m].setAttribute("data-index",m);
         menuItems[m].onmouseover = function(){
